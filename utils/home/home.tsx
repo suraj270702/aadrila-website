@@ -12,12 +12,12 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({ stage }) => {
         initial: { scale: 0, opacity: 0 },
         animate: { 
           scale: 1, 
-          opacity: 1,
-          transition: { duration: 0.8, ease: [0.6, 0.01, 0.05, 0.95] }
+          opacity: 1
         }
       };
     }
     return {
+      initial: { scale: 1, opacity: 1 },
       animate: { 
         scale: 1, 
         opacity: 1 
@@ -58,6 +58,10 @@ export const AnimatedLogo: React.FC<AnimatedLogoProps> = ({ stage }) => {
           variants={getLogoVariants()}
           initial="initial"
           animate="animate"
+          transition={{ 
+            duration: 0.8, 
+            ease: [0.6, 0.01, 0.05, 0.95] 
+          }}
           className="flex items-center justify-center flex-shrink-0"
         >
           <motion.div

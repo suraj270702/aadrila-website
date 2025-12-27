@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
     visible: { 
       opacity: 1, 
       x: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
+      
     }
   };
 
@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
+      
     }
   };
 
@@ -54,6 +54,7 @@ const Contact: React.FC = () => {
             initial="hidden"
             animate={isLeftContentInView ? "visible" : "hidden"}
             variants={leftContentVariants}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-3xl md:text-4xl lg:text-[48px] font-semibold text-[#141219] mb-4">
               Contact Us
@@ -83,6 +84,7 @@ const Contact: React.FC = () => {
             initial="hidden"
             animate={isFormInView ? "visible" : "hidden"}
             variants={formVariants}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <ContactForm />
           </motion.div>
