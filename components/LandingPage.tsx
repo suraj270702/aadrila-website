@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useEffect } from "react";
 import HomePage from "./Home";
 import Industries from "./Industries";
 import { ProductSection } from "./Products";
@@ -7,6 +8,12 @@ import Blogs from "./Blogs";
 import Contact from "./Contact";
 
 const LandingPage = () => {
+    useEffect(() => {
+  if (typeof window !== 'undefined') {
+    window.history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  }
+}, []);
   return (
     <div>
       <HomePage />

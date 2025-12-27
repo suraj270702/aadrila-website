@@ -6,23 +6,23 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 
 export const slideVariants = {
   enter: (direction: number) => ({
-    x: direction > 0 ? '100%' : '-100%',
-    opacity: 0
+    x: direction > 0 ? 1000 : -1000,
+    opacity: 0,
   }),
   center: {
     x: 0,
-    opacity: 1
+    opacity: 1,
   },
   exit: (direction: number) => ({
-    x: direction > 0 ? '-100%' : '100%',
-    opacity: 0
-  })
-}
+    x: direction < 0 ? 1000 : -1000,
+    opacity: 0,
+  }),
+};
 
 export const BlogCard: React.FC<BlogCardProps> = ({ blog, index, showGradients, showContent }) => {
   return (
     <div className='relative min-h-[250px] sm:min-h-[250px] md:h-[300px] lg:h-[300px]'>
-      {/* Gradient Box */}
+      
       <motion.div 
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: showGradients ? 1 : 0, scale: showGradients ? 1 : 0.8 }}
@@ -30,7 +30,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ blog, index, showGradients, 
         className="absolute bottom-0 w-full h-28 sm:h-32 md:h-36 lg:h-40 rounded-xl bg-gradient-to-r from-[#3E6EB4] via-[#A64CE8] to-[#B7C5E5] shadow-lg"
       />
       
-      {/* Content Box */}
+      
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 30 }}
